@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function shift_queue_schema() {
+  $schema['shift_queue_count'] = array(
+    'description' => 'The times of a queue item has been processed.',
+    'fields' => array(
+      'item_id' => array(
+        'description' => 'Queue item ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'count' => array(
+        'description' => 'The times of a queue item has been processed.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+    ),
+    // For documentation purposes only; foreign keys are not created in the
+    // database.
+    'foreign keys' => array(
+      'queue' => array(
+        'table' => 'queue',
+        'columns' => array('item_id' => 'item_id'),
+      ),
+    ),
+    'indexes' => array(
+      'item_count' => array('count'),
+    ),
+    'unique keys' => array(
+      'item_id' => array('item_id'),
+    ),
+  );
+  return $schema;
+}

@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function shift_queue_menu() {
+  $items['admin/config/system/shift_queue'] = array(
+    'title' => 'Shift queue',
+    'description' => 'Enable/disable queue',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('shift_queue_admin_form'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'shift_queue.admin.inc',
+  );
+
+  return $items;
+}

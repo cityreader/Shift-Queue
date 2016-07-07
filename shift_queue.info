@@ -1,0 +1,5 @@
+name = Shift Queue
+description = Shift queue provides maximum failed retry.
+core = 7.x
+files[] = lib/ShiftQueue.php
+
