@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Implement scheme for shift_queue.
+ */
 
 /**
  * Implements hook_schema().

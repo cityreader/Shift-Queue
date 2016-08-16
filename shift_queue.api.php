@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * API function examples of Shift queue.

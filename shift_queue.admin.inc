@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Implements page callbacks for admin.
+ */
 
 /**
  * Shift queue admin form.
@@ -21,14 +25,14 @@ function shift_queue_admin_form($form, &$form_state) {
 
       $form[$name]['queue_enable_' . $name] = array(
         '#type' => 'checkbox',
-        '#title' => t('Enable %name', ['%name' => $name]),
+        '#title' => t('Enable processing of queue: %name', ['%name' => $name]),
         '#default_value' => variable_get('queue_enable_' . $name, 1),
         '#return_value' => 1,
       );
 
       $form[$name]['queue_item_max_failed_attempts_' . $name] = array(
         '#type' => 'textfield',
-        '#title' => t('Max failed attempts'),
+        '#title' => t('Maximum failed processing attempts'),
         '#size' => 2,
         '#maxlength' => 2,
         '#default_value' => variable_get('queue_item_max_failed_attempts_' . $name, 2),
